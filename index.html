@@ -265,9 +265,15 @@
             fcMobile.timeout("16", document.querySelector(".day"))
         },5000)
         setTimeout(()=>{
-            fcMobile.timeout("10", document.querySelector(".month"))
+            fcMobile.timeout("01", document.querySelector(".month"))
         },6000)
     }
-    
+    const bgMusic = document.getElementById("bgMusic");
+    document.addEventListener("click", () => {
+        if (bgMusic.paused) {
+            bgMusic.play().catch(() => {});
+        }
+    }, { once: true });
 </script>
 </html>
+
