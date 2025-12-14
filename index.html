@@ -147,8 +147,8 @@
             </div>
         </div>
     </div>
-<audio id="bg-music" loop>
-    <source src="hihimn.mp3" type="audio/mpeg">
+<audio id="bgMusic" loop>
+    <source src="./hihimn.mp3" type="audio/mpeg">
 </audio>
 </body>
 <script>
@@ -268,12 +268,15 @@
             fcMobile.timeout("01", document.querySelector(".month"))
         },6000)
     }
-    const bgMusic = document.getElementById("bgMusic");
-    document.addEventListener("click", () => {
-        if (bgMusic.paused) {
-            bgMusic.play().catch(() => {});
-        }
-    }, { once: true });
+  const bgMusic = document.getElementById("bgMusic");
+
+function startMusic() {
+    bgMusic.play().catch(()=>{});
+    document.body.removeEventListener("click", startMusic);
+}
+
+document.body.addEventListener("click", startMusic);
 </script>
 </html>
+
 
