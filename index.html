@@ -272,14 +272,15 @@
     }
     const bgMusic = document.getElementById("bgMusic");
 
-    document.addEventListener("click", () => {
-        if (bgMusic.paused) {
-            bgMusic.play().catch(() => {});
-        }
-    }, { once: true });
+document.addEventListener("click", () => {
+  if (bgMusic && bgMusic.paused) {
+    bgMusic.play().catch(() => {});
+  }
+}, { once: true });
 
 </script>
 </html>
+
 
 
 
